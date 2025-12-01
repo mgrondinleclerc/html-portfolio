@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 6 — Analyse de besoins — Club de natation Rouge et Or</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #f8f9fc; }
+        .header-hero { 
+            background: linear-gradient(135deg, #C8102E 0%, #8B0000 50%, #C8102E 100%); 
+            color: #fff; 
+            position: relative;
+            overflow: hidden;
+        }
+        .header-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .header-hero .container { position: relative; z-index: 1; }
+        .badge-rouge-or { 
+            background: linear-gradient(to right, #C8102E, #FFD700); 
+            color: #fff; 
+            font-weight: 600;
+        }
+        .text-rouge-or { color: #C8102E; }
+        .btn-rouge-or {
+            background-color: #C8102E;
+            border-color: #C8102E;
+            color: #fff;
+        }
+        .btn-rouge-or:hover {
+            background-color: #8B0000;
+            border-color: #8B0000;
+            color: #fff;
+        }
+        .btn-outline-rouge-or {
+            border-color: #C8102E;
+            color: #C8102E;
+        }
+        .btn-outline-rouge-or:hover {
+            background-color: #C8102E;
+            border-color: #C8102E;
+            color: #fff;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #C8102E;
+            color: #fff;
+        }
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(200, 16, 46, 0.25);
+        }
+        .card h2.h4 {
+            color: #C8102E;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <meta name="description" content="Analyse de besoins pour le Club de natation Rouge et Or de l'Université Laval — amélioration des pratiques administratives, organisationnelles et humaines.">
+</head>
+<body>
+    <header class="header-hero py-5 mb-4">
+        <div class="container">
+            <a href="index.html#projets" class="btn btn-light btn-sm mb-3" style="background-color: #FFD700; border-color: #FFD700; color: #000; font-weight: 600;"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+            <h1 class="display-6 mb-1">Analyse de besoins — Club de natation Rouge et Or</h1>
+            <p class="mb-0">Éducation •  Analyse systémique</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Description</h2>
+                        <p>Projet d'analyse de besoins réalisé dans le cadre du cours Approche systémique et analyse de besoins à l'Université Laval. Cette analyse vise à appuyer le Club de natation Rouge et Or dans l'amélioration de ses pratiques administratives, organisationnelles et humaines afin d'assurer une gestion interne efficace et durable.</p>
+                    </div>
+                </div>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Contexte</h2>
+                        <p>Fondé en 1951, le Club de natation Rouge et Or de l'Université Laval est une référence en natation universitaire, ayant remporté de nombreux titres provinciaux et formé des athlètes d'élite. Sous la direction de l'entraîneur-chef, le club poursuit un important travail de relance et de structuration. Malgré son dynamisme sportif, le club fait face à des défis liés à la gestion administrative et à la transmission des connaissances.</p>
+                        <p class="mb-0">L'analyse a été réalisée à partir d'entretiens avec les principaux acteurs du club, notamment l'entraîneur-chef et le responsable de l'organisation des compétitions, permettant de cerner les enjeux organisationnels et de proposer des recommandations structurées.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Besoins d'affaires identifiés</h2>
+                        <ul class="mb-0">
+                            <li><strong>Manque de documentation et de procédures écrites</strong>: Plusieurs tâches administratives (affiliations, inscriptions, réservations, organisation des compétitions) reposent sur des connaissances tacites non consignées, créant un risque opérationnel en cas d'absence d'un responsable.</li>
+                            <li><strong>Dépendance à des individus clés</strong>: Certaines fonctions critiques (planification des compétitions, gestion des inscriptions, maintenance du système électronique) reposent sur une seule personne, compliquant le transfert de connaissances.</li>
+                            <li><strong>Absence de formation structurée</strong>: La formation des nouveaux entraîneurs et des officiels est souvent informelle, transmise oralement, sans guide de référence ni plan de développement à long terme.</li>
+                            <li><strong>Communication interne perfectible</strong>: Les outils de partage (Teams, OneDrive) sont utilisés sans cadre commun, entraînant des pertes d'information et des doublons de documents.</li>
+                            <li><strong>Besoin d'alléger la charge de travail</strong>: Plusieurs membres, notamment le coach en chef, cumulent un grand nombre de responsabilités, nécessitant une répartition plus équilibrée des tâches.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Méthodologie</h2>
+                        <ul>
+                            <li><strong>Entretiens structurés</strong>: Entrevues pour comprendre la structure, le fonctionnement et les défis du club.</li>
+                            <li><strong>Analyse systémique</strong>: Application de l'approche systémique pour identifier les interactions entre les différents éléments organisationnels (ressources humaines, processus, technologies, contraintes).</li>
+                            <li><strong>Modélisation des scénarios</strong>: Comparaison entre le scénario actuel et le scénario idéal, avec identification des écarts et des leviers d'amélioration.</li>
+                            <li><strong>Analyse des tâches fonctionnelles</strong>: Cartographie des tâches avant, pendant et après les compétitions pour identifier les points critiques et les opportunités d'amélioration.</li>
+                            <li><strong>Modèle de Chevalier</strong>: Utilisation du modèle de Roger Chevalier (mise à jour du modèle de Gilbert) pour analyser les facteurs d'influence sur la performance (Information, Ressources, Incitations, Connaissances/Compétences, Capacité, Motifs).</li>
+                            <li><strong>Identification des contraintes</strong>: Analyse des contraintes financières, humaines, technologiques, organisationnelles, temporelles et légales pour proposer des solutions réalistes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Tâches fonctionnelles analysées</h2>
+                        <div class="accordion" id="accordionTaches">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                        Avant la compétition
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#accordionTaches">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Planifier la tenue de la compétition</li>
+                                            <li>Concevoir la documentation</li>
+                                            <li>Valider les inscriptions</li>
+                                            <li>Mettre en place et tester les installations techniques</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                        Pendant la compétition
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionTaches">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Réaliser la réunion technique</li>
+                                            <li>Superviser le déroulement de la compétition</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                        Après la compétition
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionTaches">
+                                    <div class="accordion-body">
+                                        <ul class="mb-0">
+                                            <li>Clôturer la compétition</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Contraintes identifiées</h2>
+                        <ul>
+                            <li><strong>Contraintes financières</strong>: Le club repose principalement sur les cotisations des nageurs, les revenus des compétitions et les commandites, limitant les investissements dans de nouveaux outils.</li>
+                            <li><strong>Contraintes humaines</strong>: Équipe administrative restreinte avec charge de travail importante et roulement de personnel régulier.</li>
+                            <li><strong>Contraintes technologiques</strong>: Logiciels spécialisés non interconnectés nécessitant une expertise technique spécifique.</li>
+                            <li><strong>Contraintes organisationnelles</strong>: Culture basée sur la débrouillardise et la transmission informelle des connaissances.</li>
+                            <li><strong>Contraintes temporelles</strong>: Calendrier des compétitions planifié un an à l'avance, limitant la marge de manœuvre pour tester de nouveaux outils.</li>
+                            <li><strong>Contraintes légales</strong>: Respect des normes de l'Université Laval, de la Fédération de natation du Québec et de Natation Canada.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4">Objectifs d'apprentissage et de performance</h2>
+                        <p>L'analyse a permis d'identifier des objectifs d'apprentissage pour les membres du club (entraîneurs, bénévoles, administrateurs) ainsi que des objectifs de performance organisationnelle visant à améliorer l'efficacité, la continuité et la pérennité des opérations.</p>
+                        <p class="mb-0">Les recommandations proposées visent à clarifier les rôles, documenter les processus et instaurer une culture de gestion structurée, permettant d'assurer une continuité des activités, de faciliter la formation des nouveaux membres et d'accroître l'efficacité collective.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Résultats et livrables</h2>
+                        <ul class="mb-0">
+                            <li><strong>Rapport d'analyse complet</strong> présentant le contexte, les besoins d'affaires, les ressources existantes, les scénarios actuels vs idéaux, les tâches fonctionnelles, le portrait du groupe cible, les objectifs d'apprentissage et de performance, l'évaluation sommative, les facteurs d'influence et les contraintes.</li>
+                            <li><strong>Modélisation systémique</strong> des interactions organisationnelles et identification des leviers d'amélioration.</li>
+                            <li><strong>Recommandations structurées</strong> alignées sur les contraintes identifiées et les ressources disponibles.</li>
+                            <li><strong>Base de travail</strong> pour la conception de solutions de formation et d'amélioration organisationnelle.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Démarches</h2>
+                        <ul>
+                            <li>Conduction d'entretiens structurés avec les principaux acteurs du club</li>
+                            <li>Application de l'approche systémique pour analyser l'organisation</li>
+                            <li>Modélisation des scénarios actuels vs idéaux</li>
+                            <li>Analyse des tâches fonctionnelles avant, pendant et après les compétitions</li>
+                            <li>Utilisation du modèle de Chevalier pour identifier les facteurs d'influence</li>
+                            <li>Rédaction collaborative du rapport d'analyse avec l'équipe</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Défis rencontrés</h2>
+                        <ul>
+                            <li>Collecte d'informations complètes sur une organisation complexe avec de multiples acteurs</li>
+                            <li>Équilibre entre l'analyse approfondie et les contraintes temporelles du projet académique</li>
+                            <li>Synthèse d'une grande quantité d'informations en recommandations actionnables</li>
+                            <li>Coordination du travail d'équipe pour assurer la cohérence du rapport final</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Stratégies de résolution</h2>
+                        <ul>
+                            <li>Préparation rigoureuse des entretiens avec grilles de questions structurées</li>
+                            <li>Utilisation de l'approche systémique comme cadre méthodologique pour guider l'analyse</li>
+                            <li>Répartition claire des sections du rapport entre les membres de l'équipe</li>
+                            <li>Révisions itératives pour assurer la cohérence et la qualité du document final</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Leçons apprises</h2>
+                        <ul>
+                            <li>L'importance de la documentation formelle pour assurer la continuité organisationnelle et réduire la dépendance aux individus clés.</li>
+                            <li>La nécessité d'une formation structurée pour faciliter l'intégration des nouveaux membres et standardiser les pratiques.</li>
+                            <li>L'utilité de l'approche systémique pour comprendre les interactions complexes au sein d'une organisation et identifier les leviers d'amélioration.</li>
+                            <li>L'importance de prendre en compte les contraintes réelles (financières, humaines, technologiques) pour proposer des solutions réalistes et durables.</li>
+                            <li>La valeur de l'analyse des tâches fonctionnelles pour identifier les points critiques et les opportunités d'optimisation des processus.</li>
+                            <li>L'approche collaborative enrichit l'analyse en apportant des perspectives multiples et complémentaires.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="https://placehold.co/600x400/C8102E/FFD700?text=Analyse+de+besoins" class="card-img-top" alt="Analyse de besoins — Club de natation Rouge et Or">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mb-2">
+                            <span class="badge badge-rouge-or">Analyse systémique</span>
+                            <span class="badge badge-rouge-or">Analyse de besoins</span>
+                            <span class="badge badge-rouge-or">Modèle de Chevalier</span>
+                            <span class="badge badge-rouge-or">Gestion organisationnelle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Infos</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li><strong>Rôle</strong>: Analyste de besoins, co-auteur du rapport</li>
+                            <li><strong>Durée</strong>: Session d'automne 2025</li>
+                            <li><strong>Année</strong>: 2025</li>
+                            <li><strong>Contexte</strong>: Cours Approche systémique et analyse de besoins</li>
+                            <li><strong>Client</strong>: Club de natation Rouge et Or (Université Laval)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Équipe</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2">
+                                <i class="bi bi-person-fill text-rouge-or me-1"></i>
+                                Catherine Leblanc
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-person-fill text-rouge-or me-1"></i>
+                                Émilie Bélanger
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-person-fill text-rouge-or me-1"></i>
+                                Martine Gagnon
+                            </li>
+                            <li>
+                                <i class="bi bi-person-fill text-rouge-or me-1"></i>
+                                Maxime Grondin-Leclerc
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card shadow-sm mt-3">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Sections du rapport</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Contexte et besoins d'affaires
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Scénario actuel vs idéal
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Tâches fonctionnelles
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Portrait du groupe cible
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Objectifs d'apprentissage et de performance
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Évaluation sommative
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Facteurs d'influence (modèle de Chevalier)
+                            </li>
+                            <li>
+                                <i class="bi bi-file-earmark-text-fill text-rouge-or me-1"></i>
+                                Contraintes du projet
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 border-top bg-white">
+        <div class="container text-center">
+            <a href="index.html#projets" class="btn btn-outline-rouge-or"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 3 — Le Cirque Webb — Jeu sérieux sur les dark patterns du web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Palette inspirée de l'image du Cirque Webb - ambiance sombre et mystérieuse */
+        body { 
+            background: linear-gradient(135deg, #2a1d4a 0%, #3d2a6b 50%, #4a3a7a 100%);
+            background-attachment: fixed;
+            color: #e8e3f0;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Effet étoiles scintillantes en arrière-plan - plus subtil */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 30%, rgba(255, 107, 157, 0.4), transparent),
+                radial-gradient(1.5px 1.5px at 60% 70%, rgba(255, 237, 78, 0.4), transparent),
+                radial-gradient(1px 1px at 50% 50%, rgba(100, 200, 255, 0.3), transparent),
+                radial-gradient(1px 1px at 80% 10%, rgba(255, 107, 157, 0.3), transparent),
+                radial-gradient(1.5px 1.5px at 90% 80%, rgba(255, 237, 78, 0.3), transparent),
+                radial-gradient(1px 1px at 33% 40%, rgba(100, 200, 255, 0.25), transparent),
+                radial-gradient(1.5px 1.5px at 15% 60%, rgba(255, 107, 157, 0.35), transparent);
+            background-repeat: repeat;
+            background-size: 200% 200%;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+            animation: twinkle 12s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.35; }
+        }
+        
+        /* Conteneur principal au-dessus des étoiles */
+        main, header, footer {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-hero { 
+            background: linear-gradient(135deg, #2d1b69 0%, #5a3d8f 50%, #8b5a9f 100%);
+            color: #fff;
+            box-shadow: 0 2px 15px rgba(214, 51, 132, 0.2);
+            border-bottom: 1px solid rgba(255, 237, 78, 0.2);
+        }
+        
+        .header-hero h1 {
+            text-shadow: 0 0 10px rgba(255, 237, 78, 0.3);
+        }
+        
+        /* Cartes avec fond sombre et bordures lumineuses */
+        .card {
+            background: rgba(30, 20, 60, 0.7);
+            border: 1px solid rgba(139, 90, 159, 0.25);
+            color: #e8e3f0;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            border-color: rgba(139, 90, 159, 0.4);
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.15);
+            transform: translateY(-1px);
+        }
+        
+        .card h2, .card h4, .card h6 {
+            color: #e6d47f;
+        }
+        
+        .card strong {
+            color: #d49ab8;
+        }
+        
+        .card ul li::marker {
+            color: #b894c8;
+        }
+        
+        /* Boutons */
+        .btn-light {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(230, 212, 127, 0.3);
+            color: #e6d47f;
+        }
+        
+        .btn-light:hover {
+            background: rgba(230, 212, 127, 0.15);
+            border-color: #e6d47f;
+            color: #fff;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5a9f 0%, #6f42c1 100%);
+            border: 1px solid rgba(230, 212, 127, 0.2);
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #a878b8 0%, #8b5a9f 100%);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline-secondary {
+            border-color: rgba(139, 90, 159, 0.4);
+            color: #e6d47f;
+        }
+        
+        .btn-outline-secondary:hover {
+            background: rgba(139, 90, 159, 0.15);
+            border-color: #8b5a9f;
+            color: #fff;
+        }
+        
+        /* Badges */
+        .badge {
+            background: rgba(139, 90, 159, 0.15) !important;
+            border: 1px solid rgba(139, 90, 159, 0.3);
+            color: #e6d47f !important;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(26, 13, 51, 0.85) !important;
+            border-top: 1px solid rgba(139, 90, 159, 0.25) !important;
+            color: #e8e3f0 !important;
+        }
+        
+        footer .btn {
+            margin-top: 0.5rem;
+        }
+        
+        .ratio-16x9 { 
+            border-radius: .5rem; 
+            overflow: hidden;
+            border: 1px solid rgba(139, 90, 159, 0.2);
+        }
+        
+        /* Image de la carte */
+        .card-img-top {
+            border-bottom: 1px solid rgba(139, 90, 159, 0.25);
+        }
+        
+        /* Texte secondaire */
+        .text-muted {
+            color: #b8a8c8 !important;
+        }
+        
+        /* Liens */
+        a {
+            color: #e6d47f;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #d49ab8;
+        }
+        
+        /* Transitions douces */
+        * {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Amélioration du contraste pour la lisibilité */
+        .card p, .card li {
+            line-height: 1.7;
+        }
+        
+        /* Effet sur l'image - plus subtil */
+        .card-img-top {
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.01);
+        }
+    </style>
+    <meta name="description" content="Le Cirque Webb — Jeu sérieux sur les dark patterns du web, finaliste Prix NUMIX 2022. Projet académique UQAC. Rôle: co-programmation. Exploration du potentiel pédagogique des jeux vidéo.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https:; font-src 'self' https: data:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https:;">
+</head>
+<body>
+    <header class="header-hero py-5 mb-4">
+        <div class="container">
+            <a href="index.html#projets" class="btn btn-light btn-sm mb-3"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+            <h1 class="display-6 mb-1">Le Cirque Webb</h1>
+            <p class="mb-0">Jeux vidéo – programmation • Jeu sérieux sur les dark patterns • UQAC</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Description</h2>
+                        <p><strong>Le Cirque Webb</strong> est un jeu sérieux développé dans le cadre d'un projet académique à l'UQAC visant à sensibiliser les utilisateurs aux <em>dark patterns</em> du web. Ces techniques de design manipulent l'interface utilisateur pour inciter les utilisateurs à effectuer des actions qu'ils n'auraient pas nécessairement voulu faire, comme s'abonner à des services, partager des données personnelles ou effectuer des achats non désirés. Le projet a été finaliste au Prix NUMIX 2022 (relève étudiante).</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Contexte</h2>
+                        <p>Projet académique réalisé à l'UQAC dans le cadre d'une exploration du potentiel pédagogique des jeux vidéo. L'objectif était de créer une expérience interactive permettant d'identifier, comprendre et reconnaître les dark patterns couramment utilisés sur le web.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Objectifs</h2>
+                        <ul class="mb-0">
+                            <li>Sensibiliser les utilisateurs aux techniques de manipulation utilisées sur le web.</li>
+                            <li>Permettre l'identification et la compréhension des différents types de dark patterns.</li>
+                            <li>Explorer le potentiel pédagogique des jeux vidéo pour l'éducation à la littératie numérique.</li>
+                            <li>Développer une expérience interactive engageante qui favorise l'apprentissage par la pratique.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Rôle et contributions</h2>
+                        <ul class="mb-0">
+                            <li>Co-programmation du jeu avec l'équipe de développement.</li>
+                            <li>Implémentation des mécaniques de gameplay.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4">Démarches</h2>
+                        <ul>
+                            <li>Recherche et documentation sur les différents types de dark patterns (roach motel, confirm shaming, hidden costs, etc.).</li>
+                            <li>Conception des mécaniques de gameplay permettant l'identification et la compréhension des dark patterns.</li>
+                            <li>Tests itératifs avec des utilisateurs pour valider l'efficacité pédagogique du jeu.</li>
+                            <li>Intégration des retours pour améliorer l'expérience d'apprentissage.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Résultats</h2>
+                        <ul class="mb-0">
+                            <li>Jeu sérieux fonctionnel permettant l'apprentissage interactif des dark patterns.</li>
+                            <li>Finaliste au Prix NUMIX 2022 (relève étudiante).</li>
+                            <li>Distribution Windows via itch.io.</li>
+                            <li>Exploration réussie du potentiel pédagogique des jeux vidéo pour la littératie numérique.</li>
+                            <li>Validation de l'approche par l'expérience utilisateur et les retours des testeurs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Défis rencontrés</h2>
+                        <ul>
+                            <li>Équilibrage entre l'aspect ludique et l'objectif pédagogique du jeu.</li>
+                            <li>Représentation claire et compréhensible des dark patterns sans tomber dans la caricature.</li>
+                            <li>Création d'une expérience engageante qui maintient l'intérêt tout en transmettant des connaissances.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Stratégies de résolution</h2>
+                        <ul>
+                            <li>Design de mécaniques de gameplay qui intègrent naturellement l'apprentissage.</li>
+                            <li>Utilisation de scénarios réalistes basés sur des exemples réels de dark patterns.</li>
+                            <li>Tests itératifs pour ajuster l'équilibre entre ludique et pédagogique.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Leçons apprises</h2>
+                        <ul class="mb-0">
+                            <li>Le potentiel des jeux sérieux pour l'éducation.</li>
+                            <li>L'importance de l'équilibre entre engagement ludique et objectifs pédagogiques.</li>
+                            <li>La valeur des tests utilisateurs pour valider l'efficacité pédagogique d'un jeu sérieux.</li>
+                            <li>L'impact de la représentation visuelle et de l'interaction pour faciliter la compréhension de concepts abstraits.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="images/imageProjetCirqueWebb.png" class="card-img-top" alt="Jeu sérieux sur les dark patterns — aperçu">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-light text-dark">Jeu sérieux</span>
+                            <span class="badge bg-light text-dark">Pédagogie</span>
+                            <span class="badge bg-light text-dark">Littératie numérique</span>
+                        </div>
+                        <a href="https://uqac.itch.io/le-cirque-webb" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100"><i class="bi bi-box-arrow-up-right me-2"></i>Voir le projet sur itch.io</a>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Infos</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li><strong>Rôle:</strong> Co-programmeur</li>
+                            <li><strong>Année:</strong> 2023-2024</li>
+                            <li><strong>Contexte:</strong> Projet académique UQAC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 border-top">
+        <div class="container text-center">
+            <a href="index.html#projets" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

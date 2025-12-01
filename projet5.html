@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 5 — Plateforme de formation à distance pour pilotes (Moodle)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #ffffff; }
+        .header-hero { 
+            background: linear-gradient(90deg, #8B0000 0%, #A52A2A 30%, #3A3A3A 70%, #2C2C2C 100%); 
+            color: #fff; 
+        }
+        .header-hero h1 {
+            color: #fff;
+            font-weight: 700;
+        }
+        .badge-primary { 
+            background: linear-gradient(to right, #8B0000, #A52A2A); 
+            color: #fff; 
+        }
+        .btn-primary {
+            background: #0066CC;
+            border: none;
+            color: #fff;
+            border-radius: 8px;
+        }
+        .btn-primary:hover {
+            background: #0052CC;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+        .btn-outline-primary {
+            color: #0066CC;
+            border-color: #0066CC;
+        }
+        .btn-outline-primary:hover {
+            background-color: #0066CC;
+            border-color: #0066CC;
+            color: #fff;
+        }
+        .btn-outline-secondary {
+            color: #2C2C2C;
+            border-color: #2C2C2C;
+        }
+        .btn-outline-secondary:hover {
+            background-color: #2C2C2C;
+            border-color: #2C2C2C;
+            color: #fff;
+        }
+        .card h2.h4 {
+            color: #8B0000;
+            font-weight: 700;
+        }
+        .card h2.h6 {
+            color: #2C2C2C;
+        }
+        .text-muted {
+            color: #5a5c69 !important;
+        }
+    </style>
+    <meta name="description" content="Plateforme de formation à distance sur Moodle pour la licence de pilote privé et le permis de loisir d'avion Canadien — conception, déploiement et administration.">
+</head>
+<body>
+    <header class="header-hero py-5 mb-4">
+        <div class="container">
+            <a href="index.html#projets" class="btn btn-light btn-sm mb-3"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+            <h1 class="display-6 mb-1">Plateforme de formation à distance pour pilotes</h1>
+            <p class="mb-0">Éducation • Lachute Aviation • Moodle LMS</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Description</h2>
+                        <p>Conception, développement et administration d'une plateforme complète de formation à distance sur Moodle pour la préparation aux examens théoriques de la licence de pilote privé (PPL) et du permis de loisir d'avion Canadien. La plateforme offre un parcours d'apprentissage structuré, modulaire et flexible qui permet aux étudiants d'étudier à leur propre rythme tout en bénéficiant d'un accompagnement personnalisé.</p>
+                    </div>
+                </div>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Contexte</h2>
+                        <p>Lancé en 2020 pour Lachute Aviation dans un contexte de modernisation de la formation aéronautique et de réponse aux besoins croissants de flexibilité des étudiants. La plateforme combine formation théorique complète, évaluations formatives, ressources multimédias et suivi pédagogique personnalisé. Elle permet aux étudiants de compléter leur formation théorique en complément ou en préparation à la formation en vol.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Objectifs</h2>
+                        <ul class="mb-0">
+                            <li>Offrir une formation théorique complète et conforme aux exigences de Transport Canada.</li>
+                            <li>Permettre un apprentissage flexible et à rythme personnalisé accessible 24/7.</li>
+                            <li>Intégrer des ressources multimédias (vidéos, animations, simulations, documents) pour enrichir l'apprentissage.</li>
+                            <li>Fournir des évaluations formatives régulières avec rétroactions automatiques et personnalisées.</li>
+                            <li>Assurer un suivi pédagogique détaillé de la progression de chaque étudiant.</li>
+                            <li>Créer une communauté d'apprentissage avec forums de discussion et sessions individuelles en ligne.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Démarches</h2>
+                        <ul>
+                            <li><strong>Analyse de besoins</strong>: Consultation avec instructeurs de vol, étudiants et révision du Guide d'étude de Transport Canada pour identifier les contenus essentiels et les défis d'apprentissage.</li>
+                            <li><strong>Architecture pédagogique</strong>: Structuration du cours en modules thématiques (Droit aérien, Météorologie, Aérodynamique, Navigation, Moteurs, Instruments, Opérations aériennes, Facteurs humains) avec parcours progressif.</li>
+                            <li><strong>Création de contenu</strong>: Développement de leçons interactives, intégration de vidéos explicatives, schémas annotés, exercices pratiques et études de cas réels.</li>
+                            <li><strong>Configuration Moodle</strong>: Personnalisation du thème, création de catégories de cours, configuration des activités (quiz, devoirs, forums, H5P), paramétrages d'inscriptions et de rôles.</li>
+                            <li><strong>Système d'évaluation</strong>: Banques de questions alignées sur les examens Transport Canada, quiz adaptatifs, examens blancs chronométrés avec feedback détaillé.</li>
+                            <li><strong>Accompagnement synchrone</strong>: Intégration de sessions individuelles en visioconférence (Zoom) pour support personnalisé et clarifications.</li>
+                            <li><strong>Tests et amélioration continue</strong>: Pilote avec groupe test, collecte de feedback, ajustements itératifs du contenu et de la navigation.</li>
+                            <li><strong>Déploiement et support</strong>: Mise en ligne progressive, maintenance continue et mises à jour réglementaires.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4">Résultats</h2>
+                        <ul class="mb-0">
+                            <li><strong>Plus de 200 étudiants</strong> inscrits depuis le lancement.</li>
+                            <li><strong>Satisfaction étudiante élevée</strong>: rétroactions positives sur la flexibilité, la qualité du contenu et l'accessibilité.</li>
+                            <li><strong>Réduction du temps de formation théorique en présentiel</strong>, permettant de maximiser le temps de formation en vol.</li>
+                            <li><strong>Plateforme évolutive</strong>: ajout et modification du contenu.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Défis rencontrés</h2>
+                        <ul>
+                            <li>Adaptation du contenu théorique dense aux formats numériques tout en maintenant la rigueur et la conformité réglementaire.</li>
+                            <li>Équilibre entre autonomie de l'apprenant et nécessité d'un accompagnement personnalisé.</li>
+                            <li>Variabilité des compétences numériques des étudiants (certains peu familiers avec les plateformes en ligne).</li>
+                            <li>Maintien de l'engagement et de la motivation dans un contexte d'apprentissage à distance.</li>
+                            <li>Mise à jour régulière du contenu pour refléter les changements réglementaires de Transport Canada.</li>
+                            <li>Gestion technique de l'hébergement, de la sécurité et des sauvegardes de la plateforme.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Stratégies de résolution</h2>
+                        <ul>
+                            <li><strong>Découpage micro-learning</strong>: Fragmentation du contenu en petites unités digestibles avec objectifs clairs pour chaque leçon.</li>
+                            <li><strong>Multimodalité</strong>: Combinaison de textes, vidéos, animations, infographies et quiz interactifs pour répondre à différents styles d'apprentissage.</li>
+                            <li><strong>Communauté d'apprentissage</strong>: Forum de discussion disponible (Discord).</li>
+                            <li><strong>Infrastructure robuste</strong>: Hébergement professionnel avec sauvegardes automatiques quotidiennes, certificat SSL et monitoring de performance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Leçons apprises & opportunités</h2>
+                        <ul>
+                            <li>L'<strong>accompagnement humain reste essentiel</strong> même dans la formation à distance: les sessions individuelles et le feedback personnalisé sont des facteurs clés de succès.</li>
+                            <li>La <strong>flexibilité est un atout majeur</strong> pour les étudiants qui travaillent ou vivent loin des centres de formation.</li>
+                            <li>L'<strong>itération continue</strong> basée sur le feedback étudiant améliore constamment la qualité et la pertinence du contenu.</li>
+                            <li>Moodle offre une <strong>plateforme robuste et extensible</strong> qui permet d'intégrer de nouvelles technologies (H5P, xAPI) au fil du temps.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Technologies et outils utilisés</h2>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Moodle LMS (version 4.x)</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>H5P pour contenus interactifs</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Power-point (notes de cours PDF)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Camtasia/OBS pour vidéos</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>SCORM pour contenus externes</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Certificat SSL et hébergement sécurisé</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="images/imageProjetMoodle.png" class="card-img-top" alt="Aperçu de la plateforme Moodle de formation à distance">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-light text-dark">Moodle</span>
+                            <span class="badge bg-light text-dark">H5P</span>
+                            <span class="badge bg-light text-dark">SCORM</span>
+                            <span class="badge bg-light text-dark">Conception pédagogique</span>
+                            <span class="badge bg-light text-dark">Administration LMS</span>
+                        </div>
+                        <a href="https://lachuteaviation-cours-a-distance.ca" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100 mb-2"><i class="bi bi-box-arrow-up-right me-2"></i>Visiter la plateforme</a>
+                        <p class="small text-muted mb-0 mt-3"><i class="bi bi-info-circle me-1"></i>La plateforme nécessite la création d'un compte pour accéder au contenu complet.</p>
+                    </div>
+                </div>
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Infos</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li><strong>Rôle</strong>: Concepteur pédagogique, Administrateur Moodle, Créateur de contenu</li>
+                            <li><strong>Durée</strong>: Projet continu depuis 2020</li>
+                            <li><strong>Année de lancement</strong>: 2020</li>
+                            <li><strong>Étudiants formés</strong>: 150+</li>
+                            <li><strong>Taux de réussite</strong>: 85%+</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Modules de formation</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2">
+                                <i class="bi bi-book-fill text-primary me-1"></i>
+                                <strong>Droit aérien et réglementation</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-cloud-sun-fill text-info me-1"></i>
+                                <strong>Météorologie aéronautique</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-airplane-fill text-success me-1"></i>
+                                <strong>Aérodynamique et principes de vol</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-compass-fill text-warning me-1"></i>
+                                <strong>Navigation et planification de vol</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-gear-fill text-danger me-1"></i>
+                                <strong>Moteurs et systèmes d'aéronef</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-broadcast-pin text-secondary me-1"></i>
+                                <strong>Communications radio</strong>
+                            </li>
+                            <li>
+                                <i class="bi bi-person-hearts text-primary me-1"></i>
+                                <strong>Facteurs humains et prise de décision</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 border-top bg-white">
+        <div class="container text-center">
+            <a href="index.html#projets" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

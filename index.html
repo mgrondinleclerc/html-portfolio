@@ -1,35 +1,638 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Styles/styleSheet.css"/>
-
+    <title>Mon ePortfolio - Maxime Grondin-Leclerc</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts: Nunito -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80">
+    <a href="#projets" class="skip-link">Aller au contenu</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#projets">MonPortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#projets">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#competences">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apropos">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#citations">Références</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <header>
-        <h1>Portfolio of Maxime Grondin-Leclerc</h1>
-    </header>
+    <!-- Bandeau d'introduction compact -->
+    <section id="intro" class="intro-section" aria-label="Présentation rapide">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between gap-3">
+                <div class="flex-grow-1">
+                    <p class="intro-name h4">Maxime Grondin-Leclerc</p>
+                    <div class="intro-title">
+                        <p class="mb-1 small">
+                            <strong>Directeur des études</strong> à Lachute Aviation • 
+                            <strong>Enseignant dans l'AEC</strong> • 
+                            <strong>Concepteur pédagogique</strong> • 
+                            <strong>Développeur de jeux vidéo</strong> • 
+                            <strong>Fondateur de Pixeduc</strong>
+                        </p>
+                        <p class="text-muted small mb-0">Programme AEC – Technique en pilotage d'avion multimoteur aux instruments</p>
+                    </div>
+                </div>
+                <img src="https://placehold.co/128x128/4e73df/FFFFFF?text=MG" alt="Photo de Maxime Grondin-Leclerc" class="intro-avatar d-none d-md-block" loading="lazy">
+            </div>
+        </div>
+    </section>
 
-    <content>
-        <nav>
-            <p><a href="aboutMe.html">About me</a></p>
-        </nav>
-    </content>
 
-    <footer>
+    <!-- Section Projets -->
+    <section id="projets" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Mes Projets</h2>
+                        <p class="text-center mb-5">Découvrez une sélection de mes réalisations les plus significatives, incluant tous les projets réalisés durant le cours</p>
+            <div class="d-flex justify-content-center gap-2 mb-4">
+                <div class="btn-group" role="group" aria-label="Filtres projets">
+                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn active" data-filter="all">Tous</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="education">Éducation</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="jeux">Jeux vidéo – programmation</button>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Projet 1 -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="education">
+                    <div class="card project-card ten7001 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="images/imageProjetGestioFacteursHumains.png" alt="Aperçu du cours facteurs humains (maintenance aéronautique)" loading="lazy">
+                            <span class="project-category">Éducation</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Gestion des facteurs humains pour la sécurité en maintenance aéronautique</h5>
+                            <p class="project-description">Cours en ligne développé pour Lachute Aviation dans le but de réduire les erreurs et renforcer la sécurité en maintenance.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-tools"></i> Articulate Storyline</span>
+                                <span class="chip"><i class="bi bi-airplane"></i> Maintenance aéronautique</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet1.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Projet 2 -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="jeux">
+                    <div class="card project-card ten7015 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="images/imageProjetMue.jpg" alt="MUE — jeu d'horreur à la première personne (UQAC/NAD)" loading="lazy">
+                            <span class="project-category">Jeux vidéo – programmation</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">MUE — Projet de synthèse (UQAC/NAD)</h5>
+                            <p class="project-description">Programmation gameplay et IA sous Unreal Engine pour une expérience d'horreur narrative.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-controller"></i> Unreal Engine</span>
+                                <span class="chip"><i class="bi bi-code-slash"></i> C++</span>
+                                <span class="chip"><i class="bi bi-cpu"></i> IA</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet2.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="jeux">
+                    <div class="card project-card ten7015 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="images/imageProjetCirqueWebb.png" alt="Jeu sérieux sur les dark patterns du web" loading="lazy">
+                            <span class="project-category">Jeux vidéo – programmation</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Le Cirque Webb — Jeu sérieux sur les dark patterns</h5>
+                            <p class="project-description">Co-programmation d'un jeu sérieux pour sensibiliser aux dark patterns du web. Finaliste Prix NUMIX 2022. Exploration du potentiel pédagogique des jeux vidéo.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-controller"></i> Jeu sérieux</span>
+                                <span class="chip"><i class="bi bi-mortarboard"></i> Pédagogie</span>
+                                <span class="chip"><i class="bi bi-code-slash"></i> Programmation</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet3.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="education">
+                    <div class="card project-card ten7001 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="https://placehold.co/600x400/4e73df/FFFFFF?text=ePortfolio" alt="Aperçu du ePortfolio" loading="lazy">
+                            <span class="project-category">Éducation</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Réalisation de ce ePortfolio</h5>
+                            <p class="project-description">Conception, contenu et développement d'un ePortfolio responsive, accessible et performant.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-robot"></i> Cursor AI</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet4.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="education">
+                    <div class="card project-card ten7001 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="images/imageProjetMoodle.png" alt="Plateforme de formation à distance Moodle pour pilotes" loading="lazy">
+                            <span class="project-category">Éducation</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Plateforme de formation à distance pour pilotes</h5>
+                            <p class="project-description">Conception et administration d'une plateforme Moodle complète pour la formation théorique PPL et permis de loisir avion.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-mortarboard"></i> Moodle</span>
+                                <span class="chip"><i class="bi bi-airplane"></i> Formation aéronautique</span>
+                                <span class="chip"><i class="bi bi-camera-video"></i> H5P</span>
+                            </div>
+
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet5.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="education">
+                    <div class="card project-card ten7001 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="https://placehold.co/600x400/4e73df/FFFFFF?text=Analyse+de+besoins" alt="Analyse de besoins — Club de natation Rouge et Or" loading="lazy">
+                            <span class="project-category">Éducation</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Analyse de besoins — Club de natation Rouge et Or</h5>
+                            <p class="project-description">Analyse systémique des besoins organisationnels pour améliorer les pratiques administratives, organisationnelles et humaines du club.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-diagram-3"></i> Analyse systémique</span>
+                                <span class="chip"><i class="bi bi-clipboard-data"></i> Analyse de besoins</span>
+                                <span class="chip"><i class="bi bi-building"></i> Gestion organisationnelle</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet6.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-secondary">Voir tous mes projets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <h2 class="section-title text-center">Mes Compétences</h2>
+            <p class="text-center mb-5">Un panorama de mes domaines d'expertise et technologies maîtrisées</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3"><i class="bi bi-code-slash me-2 text-primary"></i>Développement & Jeux</h3>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">C++</li>
+                                <li class="mb-2">Unreal Engine</li>
+                                <li class="mb-2">Unreal Engine – Blueprint</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3"><i class="bi bi-vector-pen me-2 text-primary"></i>UX/UI & Pédagogie</h3>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Design UX/UI</li>
+                                <li class="mb-2">Conception pédagogique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3"><i class="bi bi-gear me-2 text-primary"></i>Outils & Technologies</h3>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Articulate Storyline</li>
+                                <li class="mb-2">Outils d'IA générative</li>
+                                <li class="mb-2">Intégration des technologies émergentes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3"><i class="bi bi-kanban me-2 text-primary"></i>Gestion</h3>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Gestion de projet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section des barres de progression retirée -->
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about-section">
+        <div class="container">
+            <h2 class="section-title text-center">À propos de moi</h2>
+            <p class="text-center mb-5">Un parcours hybride entre aviation, technologie et éducation</p>
+            
+            <div class="row g-4">
+                <!-- Carte de profil avec statistiques -->
+                <div class="col-lg-4">
+                    <div class="profile-card fade-in">
+                        <img src="https://placehold.co/320x320/4e73df/FFFFFF?text=MGL" alt="Photo de Maxime Grondin-Leclerc" class="profile-avatar" loading="lazy">
+                        <h3 class="profile-name">Maxime Grondin-Leclerc</h3>
+                        <p class="profile-title">Directeur des études • Concepteur pédagogique • Développeur</p>
+                        <p class="profile-bio">Passionné par l'intersection entre technologie et éducation, je conçois des expériences d'apprentissage innovantes qui transforment la formation.</p>
+                        
+                        <!-- Statistiques visuelles -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">17+</div>
+                                <div class="stat-label">Années d'expérience</div>
+                        </div>
+                            <div class="stat-card">
+                                <div class="stat-number">330+</div>
+                                <div class="stat-label">Heures enseignées</div>
+                        </div>
+                            <div class="stat-card">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Projets complétés</div>
+                        </div>
+                            <div class="stat-card">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Diplômes</div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    <!-- Carte vision entrepreneuriale -->
+                    <div class="vision-card fade-in">
+                        <h4><i class="bi bi-lightbulb me-2"></i>Ma vision entrepreneuriale</h4>
+                        <p class="mb-3">L'éducation doit évoluer pour répondre aux défis du monde moderne. Ma vision entrepreneuriale se traduit par :</p>
+                        <ul class="mb-3">
+                            <li><strong>Anticiper les besoins futurs</strong> : identifier les tendances technologiques et pédagogiques avant qu'elles ne deviennent des standards</li>
+                            <li><strong>Intégrer l'IA et technologies émergentes</strong> : exploiter le potentiel de l'intelligence artificielle pour créer des expériences d'apprentissage personnalisées et efficaces</li>
+                            <li><strong>Créer des solutions évolutives</strong> : développer des plateformes et outils qui s'adaptent aux changements réglementaires et technologiques</li>
+                            <li><strong>Résoudre les problèmes de façon proactive</strong> : transformer les défis organisationnels en opportunités d'innovation</li>
+                        </ul>
+                        <p class="mb-0 small text-muted"><strong>Exemples concrets</strong> : La plateforme Moodle que j'ai développée répond à un besoin de flexibilité identifié avant la pandémie. Le cours sur les facteurs humains transforme un problème de sécurité en opportunité d'apprentissage organisationnel. Mon projet de maîtrise (RPG/gestion pour pilotes) innove en combinant ludification et formation théorique rigoureuse.</p>
+                        </div>
+                    
+                    <!-- Objectifs de carrière -->
+                    <div class="vision-card fade-in mt-3">
+                        <h4><i class="bi bi-bullseye me-2"></i>Objectifs de carrière</h4>
+                        <p class="mb-3">Mes aspirations professionnelles s'articulent autour de trois axes principaux :</p>
+                        <ul class="mb-0">
+                            <li><strong>Consultant autonome en technologie éducative</strong> : accompagner les organisations dans leur transformation numérique pédagogique, en proposant des solutions sur mesure qui intègrent les meilleures pratiques UX/UI et les technologies émergentes.</li>
+                            <li><strong>Leader en innovation pédagogique</strong> : diriger des projets d'envergure qui repoussent les frontières de l'apprentissage, notamment dans le domaine aéronautique où je peux combiner expertise technique et pédagogique.</li>
+                            <li><strong>Développement professionnel continu</strong> : approfondir mes compétences en design UX/UI, en intelligence artificielle appliquée à l'éducation, et en gestion de projets complexes, tout en contribuant à la recherche en technologie éducative.</li>
+                        </ul>
+                        </div>
+                </div>
+                
+                <!-- Parcours académique et professionnel -->
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <!-- Parcours académique -->
+                        <div class="col-12">
+                            <div class="card fade-in">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-4"><i class="bi bi-mortarboard me-2 text-primary"></i>Mon parcours académique</h3>
+                                    <div class="timeline-enhanced" aria-label="Feuille de route académique">
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-star-fill"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">Présent</span>
+                                                <h5 class="h6 mb-2">Maîtrise en technologie éducative</h5>
+                                                <p class="small text-muted mb-0">Conception d'un RPG/gestion pour l'apprentissage théorique des pilotes.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-controller"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2024</span>
+                                                <h5 class="h6 mb-2">Baccalauréat en développement de jeux vidéo</h5>
+                                                <p class="small text-muted mb-0">UQAC — Spécialisation en programmation (gameplay & IA).</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-cloud-sun"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2020</span>
+                                                <h5 class="h6 mb-2">Certificat en sciences de l'atmosphère</h5>
+                                                <p class="small text-muted mb-0">UQAM — Bases scientifiques liées à l'aviation.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-airplane"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2008</span>
+                                                <h5 class="h6 mb-2">Licence pilote professionnel & instructeur</h5>
+                                                <p class="small text-muted mb-0">Transport Canada — Début de l'enseignement aéronautique.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+                        <!-- Expérience professionnelle -->
+                        <div class="col-12">
+                            <div class="card fade-in">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-4"><i class="bi bi-briefcase me-2 text-primary"></i>Expérience professionnelle</h3>
+                                    <div class="timeline-enhanced" aria-label="Historique professionnel">
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-pencil-square"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2025</span>
+                                                <h5 class="h6 mb-2">Concepteur pédagogique — Formation à distance</h5>
+                                                <p class="small mb-2"><strong>Lachute Aviation</strong></p>
+                                                <p class="small text-muted mb-0">Formation sur les facteurs humains avec scénarios interactifs et approche TEM.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-joystick"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2023 - 2024</span>
+                                                <h5 class="h6 mb-2">Programmeur — Jeu sérieux « dark patterns »</h5>
+                                                <p class="small mb-2"><strong>UQAC (projet académique)</strong></p>
+                                                <p class="small text-muted mb-0">Co-programmation d'un jeu sur les « dark patterns » du web; exploration du potentiel pédagogique des jeux vidéo.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-laptop"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2020 - Présent</span>
+                                                <h5 class="h6 mb-2">Concepteur pédagogique & Administrateur Moodle</h5>
+                                                <p class="small mb-2"><strong>Plateforme formation pilotes</strong></p>
+                                                <p class="small text-muted mb-0">Formation à distance pour la théorique du PPL et permis de loisir avion; création de cours, structuration de parcours et déploiement de plateforme.</p>
+                                                <a href="https://lachuteaviation-cours-a-distance.ca" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary mt-2">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Visiter la plateforme
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-person-workspace"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2015 - Présent</span>
+                                                <h5 class="h6 mb-2">Directeur des études & Enseignant</h5>
+                                                <p class="small mb-2"><strong>Lachute Aviation</strong></p>
+                                                <p class="small text-muted mb-0">Direction académique de l'AEC en pilotage d'aéronef et enseignement.</p>
+                        </div>
+                                        </div>
+                                        <div class="timeline-item-enhanced">
+                                            <div class="timeline-icon"><i class="bi bi-airplane-engines"></i></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-year">2008 - 2015</span>
+                                                <h5 class="h6 mb-2">Instructeur de vol</h5>
+                                                <p class="small mb-2"><strong>Transport Canada (licence)</strong></p>
+                                                <p class="small text-muted mb-0">Enseignement pratique et théorique, accompagnement jusqu'à la qualification.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                        <!-- Cours enseignés -->
+                        <div class="col-12">
+                            <div class="card fade-in">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-4"><i class="bi bi-book me-2 text-primary"></i>Cours enseignés (sélection)</h3>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="course-badge">
+                                                <h6 class="mb-2">Droit aérien et cadre légal</h6>
+                                                <span class="course-hours"><i class="bi bi-clock me-1"></i>60 heures</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="course-badge">
+                                                <h6 class="mb-2">Météorologie aéronautique</h6>
+                                                <span class="course-hours"><i class="bi bi-clock me-1"></i>105 heures</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="course-badge">
+                                                <h6 class="mb-2">Aérodynamique</h6>
+                                                <span class="course-hours"><i class="bi bi-clock me-1"></i>45 heures</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="course-badge">
+                                                <h6 class="mb-2">Navigation aéronautique</h6>
+                                                <span class="course-hours"><i class="bi bi-clock me-1"></i>60 heures</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="course-badge">
+                                                <h6 class="mb-2">Profil du pilote de ligne</h6>
+                                                <span class="course-hours"><i class="bi bi-clock me-1"></i>60 heures</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="course-badge">
+                                                <h6 class="mb-2">Facteurs humains</h6>
+                                                <span class="course-hours"><i class="bi bi-clock me-1"></i>Variable</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Contact</h2>
+            <p class="text-center mb-5">Discutons de votre prochain projet ou opportunité de collaboration</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-body p-5 text-center">
+                            <p class="lead">Vous avez un projet ou souhaitez discuter de collaboration?</p>
+                            <p>N'hésitez pas à me contacter par courriel ou via LinkedIn.</p>
+                            
+                            <div class="mt-4">
+                                <p><i class="bi bi-envelope me-2 text-primary"></i> <a href="mailto:pixeduc@gmail.com" class="text-decoration-none">pixeduc@gmail.com</a></p>
+                                <p><i class="bi bi-geo-alt me-2 text-primary"></i> Montréal, Québec, Canada</p>
+                                <p><i class="bi bi-linkedin me-2 text-primary"></i> <a href="https://www.linkedin.com/in/mgrondinleclerc" target="_blank" rel="noopener noreferrer" class="text-decoration-none">LinkedIn</a></p>
+                            </div>
+                            
+                            <div class="social-links mt-4">
+                                <a href="https://www.linkedin.com/in/mgrondinleclerc" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                                <a href="#" aria-label="Behance"><i class="bi bi-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Citations et références -->
+    <section id="citations" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Citations et références</h2>
+            <p class="text-center mb-5">Toutes les sources externes utilisées dans ce ePortfolio sont citées selon le format APA</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 mb-4">Outils d'intelligence artificielle</h3>
+                            <ul class="mb-4">
+                                <li class="mb-2">OpenAI. (2025). <em>ChatGPT</em> (Version 4.0) [Modèle de langage]. https://chat.openai.com</li>
+                                <li class="mb-2">Cursor AI. (2025). <em>Cursor</em> [Éditeur de code assisté par IA]. https://cursor.sh</li>
+                            </ul>
+                            
+                            <h3 class="h5 mb-4">Images et médias</h3>
+                            <ul class="mb-4">
+                                <li class="mb-2">Placeholder.co. (2025). <em>Service de génération d'images placeholder</em>. https://placehold.co</li>
+                                <li class="mb-2">Bootstrap Icons. (2025). <em>Bibliothèque d'icônes</em>. https://icons.getbootstrap.com</li>
+                                <li class="mb-2">Google Fonts. (2025). <em>Nunito</em> [Police de caractères]. https://fonts.google.com/specimen/Nunito</li>
+                            </ul>
+                            
+                            <h3 class="h5 mb-4">Frameworks et bibliothèques</h3>
+                            <ul class="mb-4">
+                                <li class="mb-2">Bootstrap Team. (2023). <em>Bootstrap</em> (Version 5.3.0) [Framework CSS]. https://getbootstrap.com</li>
+                                <li class="mb-2">Bootstrap Icons. (2023). <em>Bootstrap Icons</em> (Version 1.10.0) [Bibliothèque d'icônes]. https://icons.getbootstrap.com</li>
+                            </ul>
+                            
+                            <h3 class="h5 mb-4">Contenu pédagogique</h3>
+                            <ul class="mb-0">
+                                <li class="mb-2">Transport Canada. (2024). <em>Règlement de l'aviation canadien</em>. Ministère des Transports du Canada.</li>
+                                <li class="mb-2">Lachute Aviation. (2025). <em>Programme de formation en maintenance aéronautique</em>. Lachute Aviation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Maxime Grondin-Leclerc. Tous droits réservés.</p>
+            <p class="text-muted">Texte revu linguistiquement par ChatGPT (OpenAI, 2025). <br/>Site construit à l'aide de Cursor AI (2025).</p>
+        </div>
     </footer>
+
+    <!-- Pages de détails désormais dédiées; modals supprimés -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    
+    <!-- Script personnalisé -->
+    <script>
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const backToTop = document.getElementById('backToTop');
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Vérifier au chargement et au défilement
+            checkFade();
+            window.addEventListener('scroll', checkFade);
+
+            // Back to top visibility
+            window.addEventListener('scroll', () => {
+                if (!backToTop) return;
+                if (window.scrollY > 400) backToTop.classList.add('show');
+                else backToTop.classList.remove('show');
+            });
+
+            // Back to top click smooth scroll
+            if (backToTop) {
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Filtres projets
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCols = document.querySelectorAll('#projets .col-md-6, #projets .col-lg-4');
+            filterButtons.forEach(btn => btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.getAttribute('data-filter');
+                projectCols.forEach(col => {
+                    const match = category === 'all' || col.getAttribute('data-category') === category;
+                    if (match) col.classList.remove('d-none'); else col.classList.add('d-none');
+                });
+            }));
+        });
+    </script>
+
+    <button id="backToTop" type="button" class="btn btn-primary back-to-top" aria-label="Retour en haut">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 </body>
+</html>
 </html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 2 — MUE — Programmation gameplay & IA (Unreal Engine)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body { 
+            background-color: #0a0a0a; 
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(101, 67, 33, 0.02) 0%, transparent 50%);
+            color: #e8e8e8; 
+            min-height: 100vh;
+        }
+        
+        .header-hero { 
+            background: linear-gradient(135deg, #1a0f0a 0%, #2d1b0f 30%, #1a0f0a 70%, #0f0805 100%);
+            background-image: 
+                linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #1a0f0a 0%, #2d1b0f 30%, #1a0f0a 70%, #0f0805 100%);
+            color: #f5f5f5;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-hero h1 {
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3), 0 2px 4px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+        }
+        
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            color: #e8e8e8;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+        
+        .card:hover {
+            border-color: rgba(220, 20, 60, 0.4);
+            box-shadow: 0 6px 25px rgba(220, 20, 60, 0.2), 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+        
+        .card h2, .card h4, .card h6 {
+            color: #d4af37;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+        }
+        
+        .card p, .card li {
+            color: #d0d0d0;
+        }
+        
+        .btn-light {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #f5f5f5;
+        }
+        
+        .btn-light:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            border: none;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #ff1744 0%, #dc143c 100%);
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-secondary {
+            background-color: rgba(139, 69, 19, 0.1);
+            border-color: rgba(139, 69, 19, 0.5);
+            color: #d4af37;
+        }
+        
+        .btn-outline-secondary:hover {
+            background-color: rgba(139, 69, 19, 0.3);
+            border-color: rgba(139, 69, 19, 0.7);
+            color: #f5d700;
+        }
+        
+        .badge {
+            background-color: rgba(139, 69, 19, 0.3) !important;
+            border: 1px solid rgba(139, 69, 19, 0.5);
+            color: #d4af37 !important;
+        }
+        
+        .text-muted {
+            color: #a0a0a0 !important;
+        }
+        
+        footer {
+            background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #1a0f0a 100%);
+            border-top: 2px solid rgba(139, 69, 19, 0.4);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(212, 175, 55, 0.3) 20%, 
+                rgba(220, 20, 60, 0.3) 50%, 
+                rgba(212, 175, 55, 0.3) 80%, 
+                transparent 100%);
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+            margin: 1.5rem auto;
+        }
+        
+        .footer-text {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-link {
+            color: #d4af37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #f5d700;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+        
+        .card-img-top {
+            filter: brightness(0.9) contrast(1.1);
+        }
+        
+        ul li::marker {
+            color: #dc143c;
+        }
+    </style>
+    <meta name="description" content="MUE: projet de synthèse UQAC/NAD — programmation gameplay & IA sous Unreal Engine. Trailer et lien itch.io.">
+</head>
+<body>
+    <header class="header-hero py-5 mb-4">
+        <div class="container">
+            <a href="index.html#projets" class="btn btn-light btn-sm mb-3"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+            <h1 class="display-6 mb-1">MUE — Projet de synthèse (UQAC/NAD)</h1>
+            <p class="mb-0">Jeux vidéo – programmation • Unreal Engine, Gameplay, IA</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Description</h2>
+                        <p>MUE est une courte expérience d'horreur à la première personne réalisée en équipe dans le cadre de mon baccalauréat en développement de jeux vidéo. J'y ai contribué à la programmation gameplay et à l'intelligence artificielle sous Unreal Engine (C++ et Blueprints).</p>
+                    </div>
+                </div>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Contexte</h2>
+                        <p>Projet de synthèse universitaire de quatre mois, mené en collaboration avec l’UQAC et le NAD dans le cadre de mon baccalauréat en développement de jeux vidéo. L’objectif était de produire une démo jouable de haute qualité.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Objectifs</h2>
+                        <ul class="mb-0">
+                            <li>Concevoir des systèmes gameplay.</li>
+                            <li>Développer une IA d’ennemi (patrouille, poursuite, recherche, évitement).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Démarches</h2>
+                        <ul>
+                            <li>Implémentation IA avec Behavior Tree, Blackboard et AI Perception (vision/sons).</li>
+                            <li>Navigation via NavMesh, tâches personnalisées (C++) et services périodiques.</li>
+                            <li>Gameplay: interactions, triggers, gestion d'état, feedbacks (VFX/SFX), scripting Blueprint.</li>
+                            <li>Intégration manette (Xbox/PlayStation) et réglages UX pour lisibilité en basse lumière.</li>
+                        </ul>
+                        <p class="mb-0">Livrables: build jouable Windows.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4">Résultats</h2>
+                        <ul class="mb-0">
+                            <li>Build Windows stable et distribué publiquement (itch.io).</li>
+                            <li>Évaluation moyenne 4.8/5 (16 avis) sur la page du projet.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Défis rencontrés</h2>
+                        <ul>
+                            <li>Réglage fin de la perception IA et des transitions d'états.</li>
+                            <li>Pathfinding en environnements étroits et gestion des coins morts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Stratégies de résolution</h2>
+                        <ul>
+                            <li>Paramétrage AI Perception et stimuli, états explicites, timers anti-oscillation.</li>
+                            <li>Affinage NavMesh (agent radius/height), volumes, coûts de zones.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4">Leçons apprises</h2>
+                        <ul>
+                            <li>Pipeline UE pour gameplay/IA: collaboration efficace tech-art audio.</li>
+                            <li>Valeur des playtests pour révéler les comportements IA inattendus.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="images/imageProjetMue.jpg" class="card-img-top" alt="MUE — aperçu du jeu (capture)">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-light text-dark">Unreal Engine</span>
+                            <span class="badge bg-light text-dark">C++</span>
+                            <span class="badge bg-light text-dark">IA</span>
+                            <span class="badge bg-light text-dark">Gameplay</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=tacJPLp3VRM" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100 mb-2"><i class="bi bi-play-circle me-2"></i>Voir le trailer</a>
+                        <a href="https://uqac.itch.io/mue" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary w-100"><i class="bi bi-download me-2"></i>Télécharger le jeu (itch.io)</a>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Infos</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li><strong>Rôle:</strong> Programmeur gameplay & IA</li>
+                            <li><strong>Durée:</strong> 4 mois</li>
+                            <li><strong>Année:</strong> 2024</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5">
+        <div class="container footer-content">
+            <div class="text-center mb-4">
+                <a href="index.html#projets" class="btn btn-outline-secondary btn-lg">
+                    <i class="bi bi-arrow-left me-2"></i>Retour aux projets
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
