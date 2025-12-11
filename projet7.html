@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 7 — Plan directeur — Club de natation Rouge et Or</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #f8f9fc; }
+        .header-hero {
+            background: linear-gradient(135deg, #2E8B57 0%, #1E5B3A 50%, #2E8B57 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .header-hero .container { position: relative; z-index: 1; }
+        .badge-innovation {
+            background: linear-gradient(to right, #2E8B57, #4CAF50);
+            color: #fff;
+            font-weight: 600;
+        }
+        .text-innovation { color: #2E8B57; }
+        .btn-innovation {
+            background-color: #2E8B57;
+            border-color: #2E8B57;
+            color: #fff;
+        }
+        .btn-innovation:hover {
+            background-color: #1E5B3A;
+            border-color: #1E5B3A;
+            color: #fff;
+        }
+        .btn-outline-innovation {
+            border-color: #2E8B57;
+            color: #2E8B57;
+        }
+        .btn-outline-innovation:hover {
+            background-color: #2E8B57;
+            border-color: #2E8B57;
+            color: #fff;
+        }
+        .card h2.h4 {
+            color: #2E8B57;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .timeline-innovation {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-innovation::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #2E8B57, #4CAF50);
+        }
+        .timeline-item-innovation {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item-innovation::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #4CAF50;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+    </style>
+    <meta name="description" content="Plan directeur du Club de natation Rouge et Or — diagnostic systémique pour identifier les défis administratifs et proposer des pistes d'amélioration.">
+</head>
+<body>
+    <header class="header-hero py-5 mb-4">
+        <div class="container">
+            <a href="index.html#projets" class="btn btn-light btn-sm mb-3" style="background-color: #4CAF50; border-color: #4CAF50; color: #fff; font-weight: 600;"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+            <h1 class="display-6 mb-1">Plan directeur — Club de natation Rouge et Or</h1>
+            <p class="mb-0">Diagnostic • Organisation • Amélioration continue</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Description</h2>
+                        <p>Le projet s'inscrit dans le cadre du cours Approche systémique et analyse de besoins de l'Université Laval. L'équipe de cinq étudiants a été mandatée pour réaliser une analyse complète des besoins organisationnels du Club de natation Rouge et Or – Natation Université Laval, un organisme performant sur le plan sportif mais confronté à plusieurs défis administratifs et structurels.</p>
+                        <p>Selon les informations recueillies lors de la rencontre initiale, la structure interne est solide au plan sportif, mais fragile administrativement, notamment en raison du manque de documentation, de rôles flous, et d'outils technologiques dépassés. Ce contexte a justifié la mise en place d'un projet structuré visant à analyser les besoins, optimiser les pratiques et proposer des pistes de développement organisationnel innovantes.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Objectifs du projet</h2>
+                        <p>L'équipe s'est fixé plusieurs objectifs :</p>
+                        <h5>Objectif général</h5>
+                        <p>Réaliser une analyse rigoureuse permettant d'identifier les forces, défis et besoins du club afin d'améliorer son fonctionnement interne et la transmission de l'information.</p>
+                        <h5>Objectifs spécifiques</h5>
+                        <ul>
+                            <li>Documenter les processus existants et relever les zones problématiques.</li>
+                            <li>Identifier et analyser les pratiques de communication, la répartition des tâches et les outils utilisés.</li>
+                            <li>Proposer des solutions concrètes pour améliorer : la formation des nouveaux employés, le transfert de connaissances, la coordination interne, l'utilisation des technologies.</li>
+                            <li>Améliorer la cohérence et la pérennité de l'organisation grâce à une documentation claire et accessible.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Démarches suivies</h2>
+                        <p>Les démarches ont été structurées selon les quatre grandes phases du projet :</p>
+                        <div class="timeline-innovation">
+                            <div class="timeline-item-innovation">
+                                <h5 class="mb-2">Phase 1 – Analyse de l'entreprise</h5>
+                                <p class="small text-muted mb-0">Rencontre initiale avec l'entraîneur-chef. Clarification des attentes et compréhension des enjeux opérationnels. Collecte d'informations préliminaires sur les programmes, les rôles et les défis.</p>
+                            </div>
+                            <div class="timeline-item-innovation">
+                                <h5 class="mb-2">Phase 2 – Collecte de données</h5>
+                                <p class="small text-muted mb-0">Élaboration d'outils : questionnaire, formulaire de consentement, guide d'entrevue. Réalisation de deux entrevues. Prises de notes et regroupement des données par l'équipe.</p>
+                            </div>
+                            <div class="timeline-item-innovation">
+                                <h5 class="mb-2">Phase 3 – Analyse des données</h5>
+                                <p class="small text-muted mb-0">Regroupement et analyse préliminaire des informations. Identification des besoins prioritaires du club.</p>
+                            </div>
+                            <div class="timeline-item-innovation">
+                                <h5 class="mb-2">Phase 4 – Rédaction et diffusion</h5>
+                                <p class="small text-muted mb-0">Rédaction du plan directeur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Résultats obtenus</h2>
+                        <p>Les résultats découlent directement du diagnostic réalisé :</p>
+                        <h5>Résultats organisationnels</h5>
+                        <ul>
+                            <li>Portrait clair et structuré de l'organisation du club.</li>
+                            <li>Identification précise des enjeux majeurs : manque de documentation, dépendance à quelques individus clés, absence de formation formalisée.</li>
+                            <li>Mise en lumière de forces solides : structure sportive efficace, encadrement rigoureux, motivation des entraîneurs.</li>
+                        </ul>
+                        <h5>Résultats livrables</h5>
+                        <ul>
+                            <li>Plan directeur complet.</li>
+                        </ul>
+                        <h5>Résultats pédagogiques</h5>
+                        <ul>
+                            <li>Développement de compétences en analyse organisationnelle, gestion de projet, collecte de données et travail collaboratif.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Défis rencontrés</h2>
+                        <h5>1. Gestion du volume important d'informations</h5>
+                        <p>L'entrevue avec l'organisme, les notes individuelles, les échanges en équipe et le contenu théorique du cours ont généré une quantité importante de données. La difficulté résidait dans la capacité de structurer, trier et interpréter efficacement ces informations tout en évitant les redondances ou les pertes de sens.</p>
+
+                        <h5>2. Gestion du temps et des priorités</h5>
+                        <p>Les différentes phases du projet (plan directeur, outils de collecte, entrevue, analyse, rédaction) se succédaient rapidement. La simultanéité des travaux universitaires et des responsabilités professionnelles a rendu la gestion du temps particulièrement exigeante.</p>
+
+                        <h5>3. Rédaction collaborative</h5>
+                        <p>Travailler à plusieurs sur un même document, avec des styles rédactionnels et des rythmes de travail différents, a créé des défis liés à la cohérence, à la fluidité, à l'uniformisation du ton et à la coordination des modifications.</p>
+
+                        <h5>4. Analyse des données qualitatives</h5>
+                        <p>L'équipe devait transformer des informations brutes et parfois subjectives en besoins organisationnels clairs, objectifs et appuyés sur des preuves. Cette étape exigeait un jugement commun.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Stratégies de résolution adoptées</h2>
+                        <h5>Pour gérer le volume d'informations</h5>
+                        <ul>
+                            <li>Regroupement thématique des données : l'équipe a classé les notes et observations selon des catégories communes avant de procéder à l'analyse.</li>
+                            <li>Centralisation des documents sur Microsoft Teams afin d'assurer la traçabilité, d'éviter la multiplication de versions et de faciliter la consultation.</li>
+                            <li>Validation croisée entre les membres pour s'assurer que les interprétations restaient fidèles aux propos recueillis.</li>
+                        </ul>
+
+                        <h5>Pour optimiser la gestion du temps</h5>
+                        <ul>
+                            <li>Échéancier clair et partagé, accompagné d'un suivi régulier.</li>
+                            <li>Répartition des tâches selon les forces naturelles de chaque membre pour maximiser l'efficacité.</li>
+                            <li>Rencontres hebdomadaires, permettant d'ajuster rapidement le rythme et de redistribuer certaines responsabilités au besoin.</li>
+                        </ul>
+
+                        <h5>Pour améliorer la rédaction collaborative</h5>
+                        <ul>
+                            <li>Définition d'un gabarit commun pour uniformiser la structure, le style et la présentation du document.</li>
+                            <li>Utilisation du suivi des modifications dans Word afin de faciliter la fusion des contributions.</li>
+                        </ul>
+
+                        <h5>Pour structurer l'analyse qualitative</h5>
+                        <ul>
+                            <li>Approche systématique en deux temps : analyse individuelle, puis validation collective.</li>
+                            <li>Discussion en équipe pour renforcer la crédibilité de l'analyse.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Résultat obtenu</h2>
+                        <ul class="mb-0">
+                            <li><strong>Plan directeur</strong> qui inclut un échéancier.</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4">Leçons apprises</h2>
+                        <h5>Leçons liées à la gestion de projet</h5>
+                        <ul>
+                            <li>L'importance d'une communication constante, claire et documentée.</li>
+                        </ul>
+                        <h5>Leçons liées à l'analyse organisationnelle</h5>
+                        <ul>
+                            <li>Une organisation peut être performante tout en étant fragile administrativement.</li>
+                            <li>L'absence de documentation nuit à la continuité, à la formation et à la croissance.</li>
+                            <li>Les besoins d'un organisme ne se limitent pas aux aspects opérationnels : ils touchent aussi la culture, la motivation et la gestion.</li>
+                        </ul>
+                        <h5>Leçons sur le travail collaboratif</h5>
+                        <ul>
+                            <li>Les forces individuelles contribuent à la performance collective lorsqu'elles sont bien exploitées.</li>
+                            <li>La diversité des expertises représente un atout stratégique.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="https://placehold.co/600x400/2E8B57/FFFFFF?text=Plan+directeur" class="card-img-top" alt="Plan directeur — Club de natation Rouge et Or">
+                    
+                </div>
+
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Infos</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li><strong>Rôle</strong>: Co-auteur du Plan directeur</li>
+                            <li><strong>Durée</strong>: Session d'automne 2025</li>
+                            <li><strong>Année</strong>: 2025</li>
+                            <li><strong>Contexte</strong>: Cours TEN-7001 — Analyse de besoins</li>
+                            <li><strong>Client</strong>: Club de natation Rouge et Or (Université Laval)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Équipe</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2">
+                                <i class="bi bi-person-fill text-innovation me-1"></i>
+                                Catherine Leblanc
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-person-fill text-innovation me-1"></i>
+                                Émilie Bélanger
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-person-fill text-innovation me-1"></i>
+                                Martine Gagnon
+                            </li>
+                            <li>
+                                <i class="bi bi-person-fill text-innovation me-1"></i>
+                                Maxime Grondin-Leclerc
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Documents du projet</h2>
+                        <div class="mb-3">
+                            <a href="documents/Plan directeur_equipe 6_BELANGER_GAGNON_GRONDINLECLERC_LEBLANC_V2.pdf" class="btn btn-innovation btn-sm mb-2" target="_blank">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i>
+                                Télécharger le plan directeur (PDF)
+                            </a>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-3">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted">Outils utilisés</h2>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2">
+                                <i class="bi bi-microsoft-teams text-innovation me-1"></i>
+                                Teams — Communication, collaboration et gestion du projet
+                            </li>
+                           
+                            <li class="mb-2">
+                                <i class="bi bi-file-earmark-word text-innovation me-1"></i>
+                                Word — Rédaction documentaire
+                            </li>
+                            <li>
+                                <i class="bi bi-diagram-3 text-innovation me-1"></i>
+                                Outils d'analyse qualitative
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 border-top bg-white">
+        <div class="container text-center">
+            <a href="index.html#projets" class="btn btn-outline-innovation"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
