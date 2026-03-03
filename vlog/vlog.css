@@ -1,0 +1,94 @@
+/* Vlog TEN-7015 — styles communs */
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background-attachment: fixed;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+.vlog-header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #1e40af 100%);
+    color: #fff;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vlog-header h1 { color: #f8fafc; font-weight: 700; }
+
+.breadcrumb-vlog {
+    background: transparent;
+    color: rgba(255,255,255,0.9);
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-vlog a { color: #93c5fd; text-decoration: none; }
+.breadcrumb-vlog a:hover { color: #bfdbfe; text-decoration: underline; }
+.breadcrumb-vlog .separator { color: rgba(255,255,255,0.5); margin: 0 0.35rem; }
+.breadcrumb-vlog .current { color: #e2e8f0; }
+
+.vlog-nav {
+    background: rgba(30, 41, 59, 0.9);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.vlog-nav .nav-link {
+    color: #cbd5e1;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+    display: block;
+}
+
+.vlog-nav .nav-link:hover { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+.vlog-nav .nav-link.active { background: rgba(59, 130, 246, 0.3); color: #f8fafc; font-weight: 600; }
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: #0f172a;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-vlog {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    border: none;
+    color: #fff;
+}
+.btn-vlog:hover { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; }
+.btn-outline-vlog {
+    background: transparent;
+    border-color: rgba(59, 130, 246, 0.5);
+    color: #93c5fd;
+}
+.btn-outline-vlog:hover { border-color: rgba(59, 130, 246, 0.8); color: #bfdbfe; background: rgba(59, 130, 246, 0.1); }
+
+.vlog-footer {
+    background: rgba(15, 23, 42, 0.95);
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+    color: #94a3b8;
+}
+
+.card-vlog {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #e2e8f0;
+    border-radius: 0.5rem;
+}
+
+.card-vlog .card-title { color: #93c5fd; }
