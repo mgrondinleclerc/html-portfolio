@@ -35,6 +35,7 @@ body {
     padding: 1rem;
 }
 
+/* Lien « Présentation du vlog » — même style que les pages */
 .vlog-nav .nav-link {
     color: #cbd5e1;
     padding: 0.5rem 0.75rem;
@@ -42,25 +43,41 @@ body {
     text-decoration: none;
     display: block;
 }
-
 .vlog-nav .nav-link:hover { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
 .vlog-nav .nav-link.active { background: rgba(59, 130, 246, 0.3); color: #f8fafc; font-weight: 600; }
 
+/* Pages sous une section : indentation pour bien marquer la hiérarchie */
+.vlog-nav .vlog-nav-section ~ .nav-link {
+    padding-left: 1.25rem;
+    border-left: 2px solid transparent;
+    margin-left: 0.25rem;
+}
+.vlog-nav .vlog-nav-section ~ .nav-link:hover,
+.vlog-nav .vlog-nav-section ~ .nav-link.active {
+    border-left-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Titre de section (Articulate, NotebookLM, Adobe Captivate) */
 .vlog-nav-section {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-    padding: 0.75rem 0.75rem 0.25rem;
-    margin-top: 0.5rem;
-    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    letter-spacing: 0.08em;
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.12);
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.35rem;
+    border-left: 3px solid rgba(59, 130, 246, 0.6);
 }
-.vlog-nav-section:first-child { margin-top: 0; padding-top: 0; }
+.vlog-nav-section:first-child { margin-top: 0; }
+
+/* Séparateur entre les blocs */
 .vlog-nav-divider {
-    height: 1px;
-    background: rgba(59, 130, 246, 0.15);
-    margin: 0.5rem 0.75rem;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.25), transparent);
+    margin: 0.75rem 0;
 }
 
 .video-wrapper {
