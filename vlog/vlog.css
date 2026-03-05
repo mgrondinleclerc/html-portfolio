@@ -46,6 +46,23 @@ body {
 .vlog-nav .nav-link:hover { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
 .vlog-nav .nav-link.active { background: rgba(59, 130, 246, 0.3); color: #f8fafc; font-weight: 600; }
 
+.vlog-nav-section {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    padding: 0.75rem 0.75rem 0.25rem;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+.vlog-nav-section:first-child { margin-top: 0; padding-top: 0; }
+.vlog-nav-divider {
+    height: 1px;
+    background: rgba(59, 130, 246, 0.15);
+    margin: 0.5rem 0.75rem;
+}
+
 .video-wrapper {
     position: relative;
     width: 100%;
