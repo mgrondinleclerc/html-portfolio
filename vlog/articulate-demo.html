@@ -39,9 +39,13 @@
             </div>
             <div class="col-lg-9">
                 <p class="text-muted mb-3">Vous êtes ici : <strong>Articulate — Démonstration</strong></p>
-                <div class="video-wrapper mb-4">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Articulate — Démonstration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div id="embed-file-warning" class="alert alert-warning py-2 small d-none" role="alert">
+                    Pour que la vidéo s’affiche, ouvrez cette page via un serveur local (ex. clic droit → <strong>Open with Live Server</strong> dans Cursor/VS Code) au lieu d’ouvrir le fichier directement. Sinon <a href="https://www.youtube.com/watch?v=W1UIdDXnwl0" target="_blank" rel="noopener noreferrer">regardez sur YouTube</a>.
                 </div>
+                <div class="video-wrapper mb-4">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/W1UIdDXnwl0?si=lhgTlVF06LjEGDbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="small text-muted mb-3"><a href="https://www.youtube.com/watch?v=W1UIdDXnwl0" target="_blank" rel="noopener noreferrer">Ouvrir la vidéo sur YouTube</a></p>
                 <nav class="d-flex justify-content-between flex-wrap gap-2" aria-label="Navigation entre capsules">
                     <a href="articulate-presentation.html" class="btn btn-outline-vlog btn-sm"><i class="bi bi-arrow-left me-1"></i>Articulate — Présentation</a>
                     <a href="notebooklm-presentation.html" class="btn btn-vlog btn-sm">NotebookLM — Présentation <i class="bi bi-arrow-right ms-1"></i></a>
@@ -57,5 +61,10 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        if (window.location.protocol === 'file:') {
+            document.getElementById('embed-file-warning').classList.remove('d-none');
+        }
+    </script>
 </body>
 </html>
