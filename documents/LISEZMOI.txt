@@ -1,0 +1,2 @@
+Placez ici votre fichier PDF sous le nom exact : article_MaximeGrondinLeclerc.pdf
+Le lien depuis la page projet10.html pointe vers ce chemin.

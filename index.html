@@ -168,11 +168,11 @@
                 </div>
 
                 <!-- Projet 4 -->
-                <div class="col-md-6 col-lg-4 fade-in" data-category="ten-7001">
-                    <div class="card project-card ten7001 h-100">
+                <div class="col-md-6 col-lg-4 fade-in" data-category="ten-7006 ten-7015">
+                    <div class="card project-card ten7006 h-100">
                         <div class="project-media">
-                            <img class="project-image" src="https://placehold.co/600x400/4e73df/FFFFFF?text=ePortfolio" alt="Aperçu du ePortfolio" loading="lazy">
-                            <span class="project-category">TEN-7001</span>
+                            <img class="project-image" src="https://placehold.co/600x400/4e73df/FFFFFF?text=ePortfolio" alt="Aperçu du ePortfolio — TEN-7006 et TEN-7015" loading="lazy">
+                            <span class="project-category">TEN-7006 · TEN-7015</span>
                         </div>
                         <div class="card-body">
                             <h5 class="project-title">Réalisation de ce ePortfolio</h5>
@@ -181,6 +181,71 @@
                         </div>
                         <div class="card-footer project-cta">
                             <a class="btn btn-primary w-100" href="projet4.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet TEN-7006 — Restez à jour (OpEd) -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="ten-7006">
+                    <div class="card project-card ten7006 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="https://placehold.co/600x400/6f42c1/FFFFFF?text=OpEd" alt="Article d'opinion Restez à jour — TEN-7006" loading="lazy">
+                            <span class="project-category">TEN-7006</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Restez à jour</h5>
+                            <p class="project-description">Article d’opinion (800–900 mots) sur la réalité virtuelle dans la formation de pilotes : modèle hybride, enjeux et limites, avec un regard d’instructeur de vol.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-pencil-square"></i> Rédaction</span>
+                                <span class="chip"><i class="bi bi-book"></i> Recherche documentaire</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet10.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet TEN-7006 — Modèle logique et Pitch -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="ten-7006">
+                    <div class="card project-card ten7006 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="https://placehold.co/600x400/2c5282/FFFFFF?text=Mod%C3%A8le+logique" alt="Modèle logique et pitch de solution — TEN-7006" loading="lazy">
+                            <span class="project-category">TEN-7006</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Modèle logique et Pitch</h5>
+                            <p class="project-description">Modèle logique visuel (contexte, intrants, activités, extrants, résultats, indicateurs) et pitch de 5 minutes + Q&amp;R pour défendre une solution innovante.</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-diagram-3"></i> Modèle logique</span>
+                                <span class="chip"><i class="bi bi-mic"></i> Pitch</span>
+                                <span class="chip"><i class="bi bi-people"></i> Travail d’équipe</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet11.html">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet TEN-7006 — Conception de l'expérience d'apprentissage et élaboration des documents techniques -->
+                <div class="col-md-6 col-lg-4 fade-in" data-category="ten-7006">
+                    <div class="card project-card ten7006 h-100">
+                        <div class="project-media">
+                            <img class="project-image" src="https://placehold.co/600x400/1a5f7a/FFFFFF?text=Conception+p%C3%A9dag.+et+doc.+techniques" alt="TEN-7006 — Conception de l'expérience d'apprentissage et élaboration des documents techniques (formation CHSLD)" loading="lazy">
+                            <span class="project-category">TEN-7006</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Conception de l'expérience d'apprentissage et élaboration des documents techniques</h5>
+                            <p class="project-description">Livrable de session : formation H&amp;S en CHSLD (prévention des infections), one-pager Canva, specs (matrice, scénarimage, séquence 10&nbsp;min) et plan d'évaluation formative (UX, experts, production).</p>
+                            <div class="project-tech">
+                                <span class="chip"><i class="bi bi-heart-pulse"></i> CHSLD &amp; IPC</span>
+                                <span class="chip"><i class="bi bi-file-earmark-code"></i> Documents techniques</span>
+                                <span class="chip"><i class="bi bi-clipboard-data"></i> Évaluation formative</span>
+                            </div>
+                        </div>
+                        <div class="card-footer project-cta">
+                            <a class="btn btn-primary w-100" href="projet12.html">Voir les détails</a>
                         </div>
                     </div>
                 </div>
@@ -656,6 +721,12 @@
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCols = document.querySelectorAll('#projets .col-md-6.col-lg-4');
 
+        function projectMatchesFilter(col, filter) {
+            if (filter === 'all') return true;
+            const cats = (col.getAttribute('data-category') || '').trim().split(/\s+/).filter(Boolean);
+            return cats.includes(filter);
+        }
+
         // Restaurer le filtre actif depuis localStorage
         const savedFilter = localStorage.getItem('activeProjectFilter');
         if (savedFilter) {
@@ -668,7 +739,7 @@
 
                 // Appliquer le filtre aux projets
                 projectCols.forEach(col => {
-                    const match = savedFilter === 'all' || col.getAttribute('data-category') === savedFilter;
+                    const match = projectMatchesFilter(col, savedFilter);
                     if (match) {
                         col.classList.remove('d-none');
                         // Déclencher l'animation immédiatement pour les éléments visibles
@@ -706,7 +777,7 @@
             localStorage.setItem('activeProjectFilter', category);
 
             projectCols.forEach(col => {
-                const match = category === 'all' || col.getAttribute('data-category') === category;
+                const match = projectMatchesFilter(col, category);
                 if (match) {
                     col.classList.remove('d-none');
                     // Déclencher l'animation immédiatement pour les éléments visibles
