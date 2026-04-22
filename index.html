@@ -81,7 +81,7 @@
             </div>
             <div class="row g-4">
                 <!-- Mise en avant : Forsaken Sight (Mindcasters Studio) -->
-                <div class="col-12 fade-in visible" data-category="jeux" data-always-show id="spotlight-forsaken">
+                <div class="col-12 fade-in visible" data-category="jeux" id="spotlight-forsaken">
                     <article class="card project-spotlight border-0 text-white" aria-label="Mise en avant : Forsaken Sight, jeu vidéo">
                         <div class="row g-0 align-items-lg-stretch">
                             <div class="col-lg-6 p-4 p-md-5 pb-lg-5 d-flex flex-column justify-content-center project-spotlight__body order-2 order-lg-1">
@@ -749,8 +749,6 @@
         const projectCols = document.querySelectorAll('#projets .row.g-4 > [data-category]');
 
         function projectMatchesFilter(col, filter) {
-            /* Mise en avant : toujours visible, quel que soit le filtre (évite de la masquer via localStorage) */
-            if (col.hasAttribute('data-always-show')) return true;
             if (filter === 'all') return true;
             const cats = (col.getAttribute('data-category') || '').trim().split(/\s+/).filter(Boolean);
             return cats.includes(filter);
