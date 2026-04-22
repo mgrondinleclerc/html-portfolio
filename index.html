@@ -71,9 +71,9 @@
                         <p class="text-center mb-5">Découvrez une sélection de mes réalisations les plus significatives, incluant tous les projets réalisés durant le cours</p>
             <div class="d-flex justify-content-center gap-2 mb-4">
                 <div class="btn-group" role="group" aria-label="Filtres projets">
-                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn active" data-filter="all">Tous</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="all">Tous</button>
                     <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="education">Éducation</button>
-                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="jeux">Jeux vidéo – programmation</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm filter-btn active" data-filter="jeux">Jeux vidéo – programmation</button>
                     <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="ten-7001">TEN-7001</button>
                     <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="ten-7006">TEN-7006</button>
                     <button type="button" class="btn btn-outline-primary btn-sm filter-btn" data-filter="ten-7015">TEN-7015</button>
@@ -754,32 +754,34 @@
             return cats.includes(filter);
         }
 
-        // Restaurer le filtre actif depuis localStorage
-        const savedFilter = localStorage.getItem('activeProjectFilter');
-        if (savedFilter) {
-            // Trouver le bouton correspondant au filtre sauvegardé
-            const activeButton = document.querySelector(`.filter-btn[data-filter="${savedFilter}"]`);
-            if (activeButton) {
-                // Simuler un clic sur le bouton pour appliquer le filtre
-                filterButtons.forEach(b => b.classList.remove('active'));
-                activeButton.classList.add('active');
-
-                // Appliquer le filtre aux projets
-                projectCols.forEach(col => {
-                    const match = projectMatchesFilter(col, savedFilter);
-                    if (match) {
-                        col.classList.remove('d-none');
-                        // Déclencher l'animation immédiatement pour les éléments visibles
-                        const elementTop = col.getBoundingClientRect().top;
-                        const elementVisible = 150;
-                        if (elementTop < window.innerHeight - elementVisible) {
-                            col.classList.add('visible');
-                        }
-                    } else {
-                        col.classList.add('d-none');
+        // Filtre initial : localStorage, sinon « jeux » (onglet par défaut)
+        const storedFilter = localStorage.getItem('activeProjectFilter');
+        let initialFilter = (storedFilter != null && storedFilter !== '') ? storedFilter : 'jeux';
+        if (storedFilter == null || storedFilter === '') {
+            localStorage.setItem('activeProjectFilter', 'jeux');
+        }
+        let initialButton = document.querySelector(`.filter-btn[data-filter="${initialFilter}"]`);
+        if (!initialButton) {
+            initialFilter = 'jeux';
+            localStorage.setItem('activeProjectFilter', 'jeux');
+            initialButton = document.querySelector('.filter-btn[data-filter="jeux"]');
+        }
+        if (initialButton) {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            initialButton.classList.add('active');
+            projectCols.forEach(col => {
+                const match = projectMatchesFilter(col, initialFilter);
+                if (match) {
+                    col.classList.remove('d-none');
+                    const elementTop = col.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        col.classList.add('visible');
                     }
-                });
-            }
+                } else {
+                    col.classList.add('d-none');
+                }
+            });
         }
 
         // Fonction pour déclencher l'animation sur les éléments visibles
