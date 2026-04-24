@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 15 — Info ou inFaux | TEN-7015 — Développement de systèmes de formation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --projet15-text: #e8edf5;
+            --projet15-text-secondary: #cbd5e1;
+            --projet15-measure: 42rem;
+            --projet15-accent: #93c5fd;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            color: var(--projet15-text);
+            min-height: 100vh;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header-hero {
+            background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #1e3a8a 100%);
+            color: #fff;
+            border-bottom: 2px solid rgba(129, 140, 248, 0.35);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-hero h1 {
+            color: #f8fafc;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+        }
+
+        .card {
+            background-color: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(99, 102, 241, 0.22);
+            color: #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 6px 25px rgba(79, 70, 229, 0.12);
+        }
+
+        .card h2, .card h4, .card h6 {
+            color: var(--projet15-accent);
+        }
+
+        .card p, .card li {
+            color: var(--projet15-text-secondary);
+        }
+
+        .col-lg-8 .card-body p {
+            max-width: var(--projet15-measure);
+            margin-bottom: 1rem;
+        }
+
+        .col-lg-8 .card-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .col-lg-8 .card-body ul,
+        .col-lg-8 .card-body ol {
+            max-width: var(--projet15-measure);
+            padding-left: 1.25rem;
+        }
+
+        .col-lg-8 .card-body li + li {
+            margin-top: 0.5rem;
+        }
+
+        .col-lg-8 .card-body {
+            padding: 1.5rem 1.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .col-lg-8 .card-body {
+                padding: 1.75rem 2rem;
+            }
+        }
+
+        .col-lg-4 .card-body {
+            padding: 1.25rem 1.5rem;
+        }
+
+        .sidebar-badges .badge {
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-light {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #f1f5f9;
+        }
+
+        .btn-light:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            border: none;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-secondary {
+            background-color: rgba(99, 102, 241, 0.1);
+            border-color: rgba(129, 140, 248, 0.5);
+            color: #a5b4fc;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: rgba(99, 102, 241, 0.22);
+            border-color: rgba(165, 180, 252, 0.7);
+            color: #c7d2fe;
+        }
+
+        .badge {
+            background-color: rgba(99, 102, 241, 0.22) !important;
+            border: 1px solid rgba(129, 140, 248, 0.4);
+            color: #c7d2fe !important;
+        }
+
+        .text-muted {
+            color: #94a3b8 !important;
+        }
+
+        footer {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            border-top: 2px solid rgba(99, 102, 241, 0.2);
+            color: #94a3b8;
+        }
+
+        .card-img-top {
+            filter: brightness(0.95) contrast(1.05);
+        }
+
+        ul li::marker {
+            color: #818cf8;
+        }
+
+        .col-lg-8 .card-body a:not(.btn) {
+            color: #93c5fd;
+        }
+
+        .col-lg-8 .card-body a:not(.btn):hover {
+            color: #bfdbfe;
+        }
+
+        .genially-embed-wrap {
+            position: relative;
+            width: 100%;
+            min-height: min(85vh, 52rem);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: #0f172a;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+        }
+
+        .genially-embed-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 576px) {
+            .genially-embed-wrap {
+                min-height: 70vh;
+            }
+        }
+
+        .ia-declaration {
+            background-color: #f8fafc;
+            border-color: #cbd5e1 !important;
+            color: #0f172a;
+            line-height: 1.65;
+            max-width: 70rem;
+            margin-inline: auto;
+        }
+
+        .ia-declaration h2 {
+            color: #1e293b;
+        }
+
+        .sidebar-info-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+        }
+    </style>
+    <meta name="description" content="TEN-7015 Développement de systèmes de formation — prototype mobile « Info ou inFaux » sur Genially : littératie médiatique et fausses nouvelles pour le secondaire.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https:; font-src 'self' https: data:; frame-src 'self' https:;">
+</head>
+<body>
+    <header class="header-hero py-5 mb-4">
+        <div class="container">
+            <a href="index.html#projets" class="btn btn-light btn-sm mb-3"><i class="bi bi-arrow-left"></i> Retour aux projets</a>
+            <h1 class="display-6 mb-2">Prototype de formation mobile — <span class="text-nowrap">Info ou inFaux</span></h1>
+            <p class="mb-1 opacity-90">TEN-7015 — Développement de systèmes de formation — Université Laval</p>
+            <p class="mb-0 small opacity-75">Jeu sérieux · Genially</p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Description</h2>
+                        <p class="mb-3">Dans le cadre du cours <em>Développement de systèmes de formation</em> (TEN-7015) à l’Université Laval, notre équipe a produit un prototype de formation mobile: un jeu sérieux intitulé Info ou inFaux (thème de l’<em>escouade détective</em>), conçu avec Genially. L’objectif est d’apprendre aux jeunes du secondaire à repérer les fausses nouvelles sur Internet et les réseaux sociaux, en passant de la définition d’une information douteuse à des mises en situation concrètes (articles, publications à décrypter).</p>
+                        <p class="mb-0">Le parcours structure deux missions : reconnaître des indices de fiabilité ou de suspicion, puis réagir de façon réfléchie face à des contenus trompeurs en ligne.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Accéder au prototype (Genially)</h2>
+                        <p class="mb-3">Vous pouvez consulter le prototype ci-dessous ou l’ouvrir dans un nouvel onglet si l’intégration ne s’affiche pas correctement sur votre appareil.</p>
+                        <p class="mb-3"><a href="https://view.genially.com/69c04c05061ce39b90742e37" class="text-decoration-underline" target="_blank" rel="noopener noreferrer">Ouvrir Info ou inFaux sur Genially (lien direct)</a></p>
+                        <div class="genially-embed-wrap" role="region" aria-label="Fenêtre intégrée du jeu Info ou inFaux sur Genially">
+                            <iframe
+                                src="https://view.genially.com/69c04c05061ce39b90742e37"
+                                title="Jeu sérieux Info ou inFaux — prototype Genially (TEN-7015, équipe 1)"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Contexte</h2>
+                        <p class="mb-0">Travail d’équipe réalisé en TEN-7015 : concevoir un dispositif de formation bref, motivant et en lien avec des enjeux d’éducation aux médias. Le choix de Genially permet interactions, scénarisation par missions et rétroaction immédiat.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Objectifs</h2>
+                        <ul class="mb-0">
+                            <li>Sensibiliser les élèves du secondaire aux signaux de fausse nouvelle.</li>
+                            <li>Outiller le jeune public avec des questions à se poser avant de croire ou de partager une information.</li>
+                            <li>Exercer la lecture critique de brefs articles et de publications de type réseau social, en mobilisant une démarche d’enquête numérique.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Démarches</h2>
+                        <ul class="mb-3">
+                            <li><strong>Scénarisation pédagogique</strong> : élaboration de missions successives, allant de l’identification d’indices élémentaires jusqu’à des scénarios d’analyse plus approfondis.</li>
+                      
+                            <li><strong>Conception sur Genially</strong> : gabarit interactif, intégration de textes et visuels, tests d’enchaînement de la formation.</li>
+                            <li><strong>Itération en équipe</strong> : relecture, ajustement des rétroactions pédagogiques, validation du caractère « jeu sérieux » (challenge sans infantilisation).</li>
+                        </ul>
+                        <p class="mb-0 mt-3 pt-3 border-secondary border-opacity-25 border-top"><strong>Livrable :</strong> prototype interactif consultable en ligne.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Résultats</h2>
+                        <ul class="mb-0">
+                            <li>Un parcours structuré couvrant définitions, grilles de vérification et activités de détection.</li>
+                            <li>Une approche articulée autour du web et des réseaux sociaux, adaptée aux pratiques actuelles des jeunes.</li>
+                      
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Défi rencontré</h2>
+                        <ul class="mb-0">
+                            <li>Aligner le ton sur un public adolescent tout en restant rigoureux sur les critères d’évaluation d’une information.</li>
+                            <li>Offrir assez de contenu pédagogique sans alourdir le parcours sur <strong>écran mobile</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Stratégies de résolution</h2>
+                        <ul class="mb-0">
+                            <li>Une intention par écran, puis une rétroaction explicite — le jeune ne reste jamais dans le flou sur « ce qu’il aurait dû viser».</li>
+                            
+                          
+                            <li>Faire lire les consignes à quelqu’un d’autre ; si la formulation prête à confusion, la réécrire avant d’ajouter des interactions.</li>
+                            <li>Garder le fil narratif (escouade détective) pour l’engagement, et réserver les formulations les plus « techniques » au moment de la rétroaction.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Leçons apprises</h2>
+                        <ul class="mb-0">
+                            <li>En jeu sérieux, des choix erronés suivis d’un rétroaction explicite ont souvent plus d’impact qu’un long exposé : le jeune public teste des hypothèses et comprend <em>pourquoi</em> une piste est la bonne.</li>
+                            <li>Savoir ce qu’est une fausse nouvelle ne suffit pas — il faut entraîner des réflexes concrets (recouper une source, relire le titre, vérifier la date) pour que l’élève sache quoi refaire seul sur un vrai fil d’actualité.</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="https://placehold.co/600x400/312e81/FFFFFF?text=Info+ou+inFaux+%C2%B7+Genially" class="card-img-top" alt="Aperçu visuel du prototype Info ou inFaux sur Genially — image de substitution" width="600" height="400" loading="lazy">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mb-3 sidebar-badges" aria-label="Mots-clés du projet">
+                            <span class="badge rounded-pill">Genially</span>
+                            <span class="badge rounded-pill">Jeu sérieux</span>
+                            <span class="badge rounded-pill">Fausses nouvelles</span>
+                            <span class="badge rounded-pill">Secondaire</span>
+                        </div>
+                        <a href="https://view.genially.com/69c04c05061ce39b90742e37" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-2" aria-hidden="true"></i>Ouvrir sur Genially (nouvel onglet)</a>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h6 text-uppercase text-muted mb-3">Infos</h2>
+                        <ul class="list-unstyled mb-0 small lh-lg">
+                            <li class="mb-2"><span class="text-muted d-block text-uppercase sidebar-info-label">Cours</span> Développement de systèmes de formation (TEN-7015)</li>
+                            <li class="mb-2"><span class="text-muted d-block text-uppercase sidebar-info-label">Type</span> Prototype de formation mobile</li>
+                            <li class="mb-2"><span class="text-muted d-block text-uppercase sidebar-info-label">Outils</span> Genially</li>
+                            <li class="mb-0"><span class="text-muted d-block text-uppercase sidebar-info-label">Thèmes</span> Littératie médiatique, réseaux sociaux, désinformation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container mb-4" role="complementary" aria-label="Déclaration sur l’utilisation de l’intelligence artificielle">
+        <div class="p-3 p-md-4 rounded border ia-declaration">
+            <h2 class="h5 fw-bold mb-3">Déclaration sur l’utilisation de l’intelligence artificielle</h2>
+            <p class="mb-0">Dans le cadre de la rédaction de cette page ePortfolio, l’intelligence artificielle a pu être utilisée pour l’aide à la structuration, à la formulation et à la relecture. Le fond du travail pédagogique (conception du prototype Info ou inFaux, choix d’équipe, expérience sur Genially) demeure basé sur notre pratique collective et l’analyse de l’équipe. Un correcteur (par ex. Antidote) a pu compléter la revue orthographique et grammaticale.</p>
+        </div>
+    </div>
+
+    <footer class="py-5">
+        <div class="container text-center d-flex flex-wrap justify-content-center gap-2">
+            <a href="index.html#projets" class="btn btn-outline-secondary btn-lg">
+                <i class="bi bi-arrow-left me-2"></i>Retour aux projets
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
